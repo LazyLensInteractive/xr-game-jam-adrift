@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://8vcdkqqjufr7"]
+
+[node name="BottleToDo" type="Node3D" unique_id=809534348]
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1526899364]
+text = "Check boat for damage (repair with workbench)"
+font_size = 26

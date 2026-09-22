@@ -1,0 +1,180 @@
+{
+	"categories": [
+		{
+			"uuid": "b886ed06-35a6-4549-b5af-103c07812059",
+			"title": "Task",
+			"color": "569eff"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "9383fb41-3934-4b31-a213-2a6092eac13f",
+			"title": "Todo",
+			"tasks": [
+				"bde6c34b-de4b-4473-8e46-c178a6ad062a",
+				"6e14ba4d-ce6d-4200-b49a-24439f6c35c3",
+				"8d1975e2-6bb7-4f3a-84cc-601f3d7e714f",
+				"ba940392-031a-4909-8a6c-413a5b6d11d4",
+				"2e9a6c88-93af-4358-8c33-9acfc0eaea35",
+				"56c2226c-a3ab-4b9a-9c69-cdd9ec3e6cd5",
+				"819ca59c-df9b-4512-9235-217f3bad2eb6",
+				"18cedf09-13ee-4df0-a782-830fc8745782",
+				"ad30b9a1-daac-4f93-8b3f-c4d827c32b28",
+				"f6e5cada-fb67-4a22-b165-ca9f734466f4",
+				"b17f41b9-a6a9-45b5-b38b-0c6c0d4aec06"
+			]
+		},
+		{
+			"uuid": "8df1bba2-c391-4e47-8c91-856e833b9115",
+			"title": "Doing",
+			"tasks": [
+				"ff478883-3097-4ef6-bb0f-154f3f13b943",
+				"ee38b27a-e38e-4677-9273-5253d653f981",
+				"12367231-c6ed-4c9b-8831-e7a36205201a"
+			]
+		},
+		{
+			"uuid": "7abffe8c-a473-4e6f-835e-4ad2c27fed76",
+			"title": "Done",
+			"tasks": [
+				"6f889c1f-93ee-4aaa-8c7e-bf4874a4237f",
+				"47d0b274-9449-4a31-90e3-5172bd9e1c9b",
+				"bb4bd511-5cd4-47d0-96f2-fcdb74ec2a4f"
+			]
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "ff478883-3097-4ef6-bb0f-154f3f13b943",
+			"title": "day one",
+			"description": "",
+			"category": "b886ed06-35a6-4549-b5af-103c07812059",
+			"steps": []
+		},
+		{
+			"uuid": "bb4bd511-5cd4-47d0-96f2-fcdb74ec2a4f",
+			"title": "boat",
+			"description": "",
+			"category": "b886ed06-35a6-4549-b5af-103c07812059",
+			"steps": []
+		},
+		{
+			"uuid": "47d0b274-9449-4a31-90e3-5172bd9e1c9b",
+			"title": "food drain",
+			"description": "",
+			"category": "b886ed06-35a6-4549-b5af-103c07812059",
+			"steps": []
+		},
+		{
+			"uuid": "ee38b27a-e38e-4677-9273-5253d653f981",
+			"title": "grab mechanics",
+			"description": "",
+			"category": "b886ed06-35a6-4549-b5af-103c07812059",
+			"steps": []
+		},
+		{
+			"uuid": "6f889c1f-93ee-4aaa-8c7e-bf4874a4237f",
+			"title": "general vr setup ",
+			"description": "",
+			"category": "b886ed06-35a6-4549-b5af-103c07812059",
+			"steps": []
+		},
+		{
+			"uuid": "bde6c34b-de4b-4473-8e46-c178a6ad062a",
+			"title": "music",
+			"description": "",
+			"category": "b886ed06-35a6-4549-b5af-103c07812059",
+			"steps": []
+		},
+		{
+			"uuid": "6e14ba4d-ce6d-4200-b49a-24439f6c35c3",
+			"title": "art",
+			"description": "",
+			"category": "b886ed06-35a6-4549-b5af-103c07812059",
+			"steps": []
+		},
+		{
+			"uuid": "12367231-c6ed-4c9b-8831-e7a36205201a",
+			"title": "env",
+			"description": "",
+			"category": "b886ed06-35a6-4549-b5af-103c07812059",
+			"steps": []
+		},
+		{
+			"uuid": "8d1975e2-6bb7-4f3a-84cc-601f3d7e714f",
+			"title": "polish",
+			"description": "",
+			"category": "b886ed06-35a6-4549-b5af-103c07812059",
+			"steps": []
+		},
+		{
+			"uuid": "ba940392-031a-4909-8a6c-413a5b6d11d4",
+			"title": "bug fix",
+			"description": "",
+			"category": "b886ed06-35a6-4549-b5af-103c07812059",
+			"steps": []
+		},
+		{
+			"uuid": "2e9a6c88-93af-4358-8c33-9acfc0eaea35",
+			"title": "story",
+			"description": "",
+			"category": "b886ed06-35a6-4549-b5af-103c07812059",
+			"steps": []
+		},
+		{
+			"uuid": "56c2226c-a3ab-4b9a-9c69-cdd9ec3e6cd5",
+			"title": "text",
+			"description": "",
+			"category": "b886ed06-35a6-4549-b5af-103c07812059",
+			"steps": []
+		},
+		{
+			"uuid": "819ca59c-df9b-4512-9235-217f3bad2eb6",
+			"title": "day two",
+			"description": "",
+			"category": "b886ed06-35a6-4549-b5af-103c07812059",
+			"steps": []
+		},
+		{
+			"uuid": "18cedf09-13ee-4df0-a782-830fc8745782",
+			"title": "day three",
+			"description": "",
+			"category": "b886ed06-35a6-4549-b5af-103c07812059",
+			"steps": []
+		},
+		{
+			"uuid": "ad30b9a1-daac-4f93-8b3f-c4d827c32b28",
+			"title": "day four",
+			"description": "",
+			"category": "b886ed06-35a6-4549-b5af-103c07812059",
+			"steps": []
+		},
+		{
+			"uuid": "f6e5cada-fb67-4a22-b165-ca9f734466f4",
+			"title": "day five",
+			"description": "",
+			"category": "b886ed06-35a6-4549-b5af-103c07812059",
+			"steps": []
+		},
+		{
+			"uuid": "b17f41b9-a6a9-45b5-b38b-0c6c0d4aec06",
+			"title": "ending",
+			"description": "",
+			"category": "b886ed06-35a6-4549-b5af-103c07812059",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"9383fb41-3934-4b31-a213-2a6092eac13f"
+			],
+			[
+				"8df1bba2-c391-4e47-8c91-856e833b9115"
+			],
+			[
+				"7abffe8c-a473-4e6f-835e-4ad2c27fed76"
+			]
+		]
+	}
+}

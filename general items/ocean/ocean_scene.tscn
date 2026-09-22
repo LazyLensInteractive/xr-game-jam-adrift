@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dyxg8sel50p5p"]
+
+[ext_resource type="Shader" uid="uid://t42s0irtyjpg" path="res://general items/ocean/ocean.gdshader" id="1_2bus4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sh1yn"]
+render_priority = 0
+shader = ExtResource("1_2bus4")
+shader_parameter/deep_color = Color(0.14463982, 0.2355167, 0.29517362, 1)
+shader_parameter/horizon_color = Color(0.3, 0.36, 0.44, 1)
+shader_parameter/foam_color = Color(0.55, 0.6, 0.62, 1)
+shader_parameter/wave_speed = -0.15
+shader_parameter/wave_height = 1.0
+shader_parameter/ripple_strength = 0.4
+shader_parameter/fresnel_power = 3.0
+shader_parameter/trail_center = Vector3(0, 0, 0)
+shader_parameter/trail_radius = 21.705
+shader_parameter/trail_wavelength = 0.365
+shader_parameter/trail_speed = -2.115
+shader_parameter/trail_strength = 4.54
+shader_parameter/foam_width = 4.525
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rtumh"]
+material = SubResource("ShaderMaterial_sh1yn")
+size = Vector2(300, 300)
+subdivide_width = 40
+subdivide_depth = 40
+
+[node name="Node3D" type="Node3D" unique_id=332840305]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1070367006]
+mesh = SubResource("PlaneMesh_rtumh")

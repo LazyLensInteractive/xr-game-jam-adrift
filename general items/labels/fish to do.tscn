@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cyx8shf1ny0db"]
+
+[node name="BottleToDo" type="Node3D" unique_id=809534348]
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1526899364]
+text = "Check fish traps so I dont starve"
