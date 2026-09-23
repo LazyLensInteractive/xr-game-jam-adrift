@@ -5,6 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://dyxg8sel50p5p" path="res://general items/ocean/ocean_scene.tscn" id="2_e1yfo"]
 [ext_resource type="ArrayMesh" uid="uid://cxo4e5231sjgj" path="res://general items/boat/Fishing_Rod.fbx" id="2_vloq4"]
 [ext_resource type="PackedScene" uid="uid://byw4kc6nwfkog" path="res://general items/labels/board.tscn" id="5_hvgc5"]
+[ext_resource type="PackedScene" uid="uid://dqppkbtnrvdd0" path="res://day 1 (tutorial)/island.tscn" id="6_vloq4"]
+[ext_resource type="Script" uid="uid://7tu3wyxltq4f" path="res://scripts/custom xr/area pickup.gd" id="7_hvgc5"]
+[ext_resource type="PackedScene" uid="uid://q0i4b7111mrc" path="res://general items/testing items/test.tscn" id="8_mvj37"]
+[ext_resource type="PackedScene" uid="uid://cm0vbs2hu6lg0" path="res://general items/poly haven models/wooden_barrels_01_1k.gltf/wooden_barrels_01_1k.gltf" id="9_k4blj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ehbqr"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -16,11 +20,11 @@ sky_material = SubResource("ProceduralSkyMaterial_ehbqr")
 [sub_resource type="Environment" id="Environment_i500l"]
 background_mode = 2
 sky = SubResource("Sky_e1yfo")
-glow_enabled = true
+reflected_light_source = 1
 fog_enabled = true
 fog_mode = 1
-fog_light_color = Color(0.25175127, 0.29965132, 0.36867025, 1)
-fog_sun_scatter = 0.07
+fog_light_color = Color(0.13832757, 0.16759232, 0.21311808, 1)
+fog_sun_scatter = 0.18
 fog_density = 1.0
 fog_height = 0.8
 fog_height_density = 2.1538
@@ -55,7 +59,8 @@ sky_mode = 1
 [node name="boat" type="Node" parent="." unique_id=789403619]
 
 [node name="hull" type="StaticBody3D" parent="boat" unique_id=464838790]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5452403, 0)
+transform = Transform3D(0.805, 0, 0, 0, 0.802904, -0.05805274, 0, 0.05805274, 0.802904, 0, 0.67430437, 0)
+collision_layer = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="boat/hull" unique_id=1271295432]
 transform = Transform3D(0.040581882, 0, 2.9997256, 0, 3, 0, -2.9997256, 0, 0.040581882, 0, -1.100802, 1.302002)
@@ -73,17 +78,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00018310547, 0.58709145, 0
 mesh = SubResource("BoxMesh_e1yfo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="boat/bed" unique_id=1405938571]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00018310547, 0.58709145, 0.6269264)
-shape = SubResource("BoxShape3D_i500l")
-
-[node name="workbench" type="StaticBody3D" parent="boat" unique_id=1782343178]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5452403, 1.1570927)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="boat/workbench" unique_id=1986328254]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00018310547, 0.58709145, 0.6269264)
-mesh = SubResource("BoxMesh_e1yfo")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="boat/workbench" unique_id=685983032]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00018310547, 0.58709145, 0.6269264)
 shape = SubResource("BoxShape3D_i500l")
 
@@ -116,4 +110,93 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6791234, 2.3429754, 3.4233
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2247896, 0, 3.0036387)
 
 [node name="board" parent="." unique_id=1307075278 instance=ExtResource("5_hvgc5")]
-transform = Transform3D(0.27634782, -0.16723461, 0.032818742, 1.0449706e-09, 0.039962232, 0.99608654, -0.11051533, -0.4181765, 0.082064524, -1.2498028, 1.5012395, 2.570066)
+transform = Transform3D(0.22616737, -0.22030476, 0.43028253, -0.0052539376, 0.29218712, 0.7629445, -0.19339716, -0.26557207, 0.48246545, -1.4039094, 1.3541481, 2.570066)
+
+[node name="island" parent="." unique_id=1647300440 instance=ExtResource("6_vloq4")]
+transform = Transform3D(0.052954797, 0, -0.71805006, 0, 0.72, 0, 0.71805006, 0, 0.052954797, -2.3458138, 0, -10.760289)
+
+[node name="AreaGrab" type="Area3D" parent="." unique_id=1327313071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8012671, 1.4443376, 2.880836)
+script = ExtResource("7_hvgc5")
+item_scene = ExtResource("8_mvj37")
+size = Vector3(0.625, 0.84, 1.03)
+metadata/_custom_type_script = "uid://7tu3wyxltq4f"
+
+[node name="wooden_barrels_01_1k" parent="." unique_id=500878766 instance=ExtResource("9_k4blj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08788967, 1.2836514, 4.714539)
+
+[node name="wooden_barrels_01_barrel01" parent="wooden_barrels_01_1k" index="0" unique_id=1508362005]
+visible = false
+
+[node name="wooden_barrels_01_barrel02" parent="wooden_barrels_01_1k" index="1" unique_id=1943499564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6998116, -0.58093405, -1.8223894)
+
+[node name="wooden_barrels_01_piece01" parent="wooden_barrels_01_1k" index="2" unique_id=520164468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7384631, 0.00014984608, -0.03667307)
+visible = false
+
+[node name="wooden_barrels_01_piece02" parent="wooden_barrels_01_1k" index="3" unique_id=169803004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0364602, 0.005278945, -0.016647339)
+visible = false
+
+[node name="wooden_barrels_01_piece03" parent="wooden_barrels_01_1k" index="4" unique_id=612084947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3734535, 0.05143404, -0.02933693)
+visible = false
+
+[node name="wooden_barrels_01_piece04" parent="wooden_barrels_01_1k" index="5" unique_id=2091805943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4656086, 0.056229353, -0.02933693)
+visible = false
+
+[node name="wooden_barrels_01_piece05" parent="wooden_barrels_01_1k" index="6" unique_id=787876091]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7590234, 0.052715063, -0.02933693)
+visible = false
+
+[node name="wooden_barrels_01_piece06" parent="wooden_barrels_01_1k" index="7" unique_id=350130036]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0726593, 0.051466584, -0.02933693)
+visible = false
+
+[node name="wooden_barrels_01_piece07" parent="wooden_barrels_01_1k" index="8" unique_id=1685564043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1931843, 0.023160458, -0.3595953)
+visible = false
+
+[node name="wooden_barrels_01_piece08" parent="wooden_barrels_01_1k" index="9" unique_id=85789838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7410028, 0, 0.9852271)
+visible = false
+
+[node name="wooden_barrels_01_piece09" parent="wooden_barrels_01_1k" index="10" unique_id=268032406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7410028, 0, 1.0963888)
+visible = false
+
+[node name="wooden_barrels_01_piece10" parent="wooden_barrels_01_1k" index="11" unique_id=763889752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4424812, 0.03507328, 0.6615467)
+visible = false
+
+[node name="wooden_barrels_01_piece11" parent="wooden_barrels_01_1k" index="12" unique_id=1324738394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44373074, 0.035218477, 1.0629196)
+visible = false
+
+[node name="wooden_barrels_01_piece12" parent="wooden_barrels_01_1k" index="13" unique_id=1907030266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45125794, 0.035253286, 1.3124814)
+visible = false
+
+[node name="wooden_barrels_01_piece13" parent="wooden_barrels_01_1k" index="14" unique_id=543407182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4105603, 0.037333846, 0.6124959)
+visible = false
+
+[node name="wooden_barrels_01_piece14" parent="wooden_barrels_01_1k" index="15" unique_id=698322184]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3832568, 0.03714478, 0.91584396)
+visible = false
+
+[node name="wooden_barrels_01_piece15" parent="wooden_barrels_01_1k" index="16" unique_id=14236063]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2678497, -0.009527087, 1.0463986)
+visible = false
+
+[node name="wooden_barrels_01_piece16" parent="wooden_barrels_01_1k" index="17" unique_id=1029934100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4984959, -0.009517193, 1.0417156)
+visible = false
+
+[node name="wooden_barrels_01_piece17" parent="wooden_barrels_01_1k" index="18" unique_id=1588659832]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6882062, -0.013236284, 1.0307884)
+visible = false
+
+[editable path="wooden_barrels_01_1k"]

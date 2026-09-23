@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://q0i4b7111mrc"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_v4i6e"]
+top_radius = 0.07
+bottom_radius = 0.09814453
+height = 0.3
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_51m2r"]
+height = 0.3
+radius = 0.08407226
+
+[node name="RigidBody3D" type="RigidBody3D" unique_id=1609368050]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=346564667]
+mesh = SubResource("CylinderMesh_v4i6e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1758200526]
+shape = SubResource("CylinderShape3D_51m2r")

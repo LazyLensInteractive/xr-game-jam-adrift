@@ -1,0 +1,1 @@
+had a whole 20 hours to make this game and thats it life got busy so this game is pretty rushed hope i was able to do something here but yeah just hope you enjoyed its far shorter than i hoped and events happened quickly but its all good
