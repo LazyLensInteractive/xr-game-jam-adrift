@@ -3,7 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://dsh2ljqg8t483" path="res://general items/poly haven models/quiver_tree_01_1k.gltf/quiver_tree_01_1k.gltf" id="1_spqag"]
 [ext_resource type="PackedScene" uid="uid://dnd35cwgyxxvv" path="res://general items/poly haven models/wooden_crate_01_1k.gltf/wooden_crate_01_1k.gltf" id="2_j4uil"]
 [ext_resource type="PackedScene" uid="uid://cryw6odclda2j" path="res://general items/poly haven models/cheiridopsis_succulent_1k.gltf/cheiridopsis_succulent_1k.gltf" id="3_ces83"]
+[ext_resource type="Script" uid="uid://bqevj83o0n04m" path="res://day 1 (tutorial)/area_3d.gd" id="4_ces83"]
 [ext_resource type="PackedScene" uid="uid://cg035dvefbxhs" path="res://general items/poly haven models/dead_quiver_branch_01_1k.gltf/dead_quiver_branch_01_1k.gltf" id="4_j4uil"]
+[ext_resource type="PackedScene" uid="uid://dchqr68hfotpr" path="res://general items/book/book.tscn" id="6_g3uqp"]
 
 [sub_resource type="Gradient" id="Gradient_bqvmh"]
 offsets = PackedFloat32Array(0.24637681, 0.884058)
@@ -67,7 +69,7 @@ transform = Transform3D(2.6924198, 0.49595696, 0.8940387, -0.6583205, 2.7678704,
 transform = Transform3D(-0.3259402, 0, 2.9168453, 0, 2.9349995, 0, -2.9168453, 0, -0.3259402, 3.939165, 1.4984622, -0.42364264)
 
 [node name="wooden_crate_01_lid" parent="wooden_crate_01_1k" index="0" unique_id=1386304378]
-transform = Transform3D(0.9999998, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0)
+transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="cheiridopsis_succulent_1k" parent="." unique_id=1990174369 instance=ExtResource("3_ces83")]
 transform = Transform3D(0.99276227, 0.12009635, 0, -0.12009635, 0.99276227, 0, 0, 0, 1, 7.8208876, 0.9888178, 3.0627437)
@@ -79,6 +81,7 @@ transform = Transform3D(0.9219994, 0.10150823, 0.37364864, -0.094076455, 0.99483
 transform = Transform3D(-0.47115, 0, 0.8820531, 0, 1, 0, -0.8820531, 0, -0.47115, 7.1189604, 1.0571795, 3.4955406)
 
 [node name="Area3D" type="Area3D" parent="." unique_id=477765988]
+script = ExtResource("4_ces83")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=197693203]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8655677, 2.331583, -0.48913574)
@@ -86,5 +89,12 @@ shape = SubResource("BoxShape3D_ces83")
 
 [node name="dead_quiver_branch_01_1k" parent="." unique_id=1547118030 instance=ExtResource("4_j4uil")]
 transform = Transform3D(0.77685934, -2.0101025, 0, 0.9375456, 0.36234027, -1.9062374, 1.7780666, 0.6871827, 1.0051281, 5.5409927, 1.3145628, 2.197746)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=691597616]
+
+[node name="book" parent="." unique_id=870901314 instance=ExtResource("6_g3uqp")]
+transform = Transform3D(-0.0705432, 0.39356282, 0.011486112, 0, 0.011669011, -0.3998297, -0.39373037, -0.070513174, -0.0020579235, 4.0078406, 1.8590008, 0.10294247)
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered" flags=6]
 
 [editable path="wooden_crate_01_1k"]

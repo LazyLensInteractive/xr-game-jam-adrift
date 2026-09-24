@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dchqr68hfotpr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4pcpa"]
+size = Vector3(1, 0.08532715, 0.97546387)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0yf1w"]
+size = Vector3(0.053771973, 0.30059814, 0.99261475)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k3wjp"]
+size = Vector3(0.8731079, 0.16259766, 0.8952637)
+
+[node name="book" type="Node3D" unique_id=870901314]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1920378031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38006592, -0.012268066)
+mesh = SubResource("BoxMesh_4pcpa")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=177155965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17722422, 0)
+mesh = SubResource("BoxMesh_4pcpa")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1683594881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47206402, 0.27006558, -0.0031937957)
+mesh = SubResource("BoxMesh_0yf1w")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=440700160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025299072, 0.26527846, -0.006958008)
+mesh = SubResource("BoxMesh_k3wjp")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=365725933]
+transform = Transform3D(1, 0, 0, 0, -0.0086330585, 0.9999628, 0, -0.9999628, -0.0086330585, 0, 0.423622, 0.38367343)
+pixel_size = 0.002
+text = "Dedicated to:
+My son"
+
+[node name="Label3D2" type="Label3D" parent="." unique_id=159334727]
+transform = Transform3D(1, 0, 0, 0, -0.0086330585, 0.9999628, 0, -0.9999628, -0.0086330585, 0, 0.423622, -0.20264578)
+pixel_size = 0.002
+text = "A Life on the sea"
