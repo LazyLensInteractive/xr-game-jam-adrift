@@ -59,7 +59,7 @@ func _physics_process(_delta: float) -> void:
 		return
 	var hands: Array = []
 	for body in get_overlapping_bodies():
-		if body is GXDKCollisionHand or body is XRController3D:
+		if body is GXDKCollisionHand:
 			hands.push_back(body)
 			if not body in _hand_states:
 				_hand_states[body] = { "pressed": false }

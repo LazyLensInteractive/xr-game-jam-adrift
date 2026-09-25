@@ -9,3 +9,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	Data.amount_food = max(Data.amount_food - hunger_rate * delta, 0.0) # should be about 5 minutes? 
+
+
+func _on_bottle_detect_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.

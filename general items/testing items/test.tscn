@@ -9,7 +9,9 @@ height = 0.3
 height = 0.3
 radius = 0.08407226
 
-[node name="RigidBody3D" type="RigidBody3D" unique_id=1609368050]
+[node name="bottle" type="RigidBody3D" unique_id=1609368050]
+collision_layer = 65537
+collision_mask = 65537
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=346564667]
 mesh = SubResource("CylinderMesh_v4i6e")
