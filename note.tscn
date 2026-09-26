@@ -1,3 +1,38 @@
 [gd_scene format=3 uid="uid://bq4bebxq2yfqc"]
 
-[node name="note" type="Node3D" unique_id=1851221104]
+[ext_resource type="Script" uid="uid://c06p118i6v5sc" path="res://note2.gd" id="1_doocs"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_doocs"]
+size = Vector2(0.19, 0.26)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wn01w"]
+size = Vector3(0.19, 0.024042968, 0.26)
+
+[node name="RigidBody3D" type="RigidBody3D" unique_id=1723993489]
+collision_layer = 3
+collision_mask = 3
+mass = 0.02
+linear_damp = 2.0
+angular_damp = 3.0
+script = ExtResource("1_doocs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=251419172]
+mesh = SubResource("PlaneMesh_doocs")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1338886032]
+transform = Transform3D(0.003137576, -1.1777447, -4.371117e-08, 0, -5.1481113e-08, 1, -0.99943703, -0.003697345, -1.3722437e-10, 0, 0.001, 0)
+pixel_size = 0.0003
+text = "Day 84: I have gotten into a routine these days... 
+ㅤ
+Wrote down everything i need to do.
+ㅤ
+
+It has been 4 long months without them...
+ㅤ 
+I will keep going for them forever. 
+ㅤ
+Whatever it takes."
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1059556501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0070214844, 0)
+shape = SubResource("BoxShape3D_wn01w")

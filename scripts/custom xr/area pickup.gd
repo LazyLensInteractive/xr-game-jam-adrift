@@ -81,8 +81,8 @@ func _get_grip_value(hand) -> float:
 		if input == null:
 			return 0.0
 		return float(input)
-	elif hand is XRController3D:
-		return hand.get_float(grip_action)
+#	elif hand is XRController3D:
+#		return hand.get_float(grip_action)
 	return 0.0
 
 func _try_place_in(hand) -> void:

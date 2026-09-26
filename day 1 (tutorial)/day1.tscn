@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://q0i4b7111mrc" path="res://general items/testing items/test.tscn" id="8_mvj37"]
 [ext_resource type="Script" uid="uid://dw8vsb4mj1wub" path="res://day 1 (tutorial)/bottle_detect.gd" id="9_2h2d7"]
 [ext_resource type="PackedScene" uid="uid://cm0vbs2hu6lg0" path="res://general items/poly haven models/wooden_barrels_01_1k.gltf/wooden_barrels_01_1k.gltf" id="9_k4blj"]
+[ext_resource type="PackedScene" uid="uid://bq4bebxq2yfqc" path="res://note.tscn" id="10_ik3uj"]
+[ext_resource type="Script" uid="uid://nbxtt6inf7uu" path="res://day 1 (tutorial)/text_bus.gd" id="11_7m0t7"]
+[ext_resource type="Script" uid="uid://c5vtxnp43kjog" path="res://day 1 (tutorial)/events.gd" id="12_7m0t7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ehbqr"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -31,6 +34,9 @@ fog_height_density = 2.1538
 fog_depth_curve = 8.574172
 fog_depth_begin = 2.0
 fog_depth_end = 30.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7m0t7"]
+size = Vector3(4.0242004, 1.2924805, 0.10620117)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hb2of"]
 resource_name = "PolyPack_Boats"
@@ -78,7 +84,7 @@ metallic = 0.56
 roughness = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k4blj"]
-size = Vector3(5.1155896, 0.5992266, 1.4876773)
+size = Vector3(5.1155896, 0.576835, 1.4876773)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i500l"]
 size = Vector3(1.6705322, 0.56347656, 0.76416016)
@@ -106,6 +112,19 @@ sky_mode = 1
 [node name="hull" type="StaticBody3D" parent="boat" unique_id=464838790]
 transform = Transform3D(0.805, 0, 0, 0, 0.802904, -0.05805274, 0, 0.05805274, 0.802904, 0, 0.67430437, 0)
 collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="boat/hull" unique_id=75462419]
+transform = Transform3D(-0.2840286, 0.006472437, 2.9865177, -0.15564898, 2.9958835, -0.021295462, -2.982466, -0.15696469, -0.28330308, -2.2532692, -0.5061222, 1.346783)
+shape = SubResource("BoxShape3D_7m0t7")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="boat/hull" unique_id=295101924]
+transform = Transform3D(0.42642406, -0.007705728, 2.9695292, -0.15442385, 2.995873, 0.029949173, -2.9655218, -0.15711148, 0.4254408, 2.0593207, -0.5036708, 1.3793947)
+shape = SubResource("BoxShape3D_7m0t7")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="boat/hull" unique_id=2096617072]
+transform = Transform3D(2.9993997, -0.05983962, -0.005060886, 0.060047716, 2.9916446, 0.21553789, 0.0007475973, -0.2155961, 2.992243, 1.1820364, -0.07799387, 7.266762)
+shape = SubResource("BoxShape3D_7m0t7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="boat/hull" unique_id=1271295432]
 transform = Transform3D(0.040581882, 0, 2.9997256, -0.15660031, 2.9959087, 0.0021185717, -2.9956353, -0.15661457, 0.04052655, 0, -0.9902459, 1.2940084)
@@ -113,7 +132,7 @@ mesh = SubResource("ArrayMesh_mvj37")
 surface_material_override/0 = SubResource("StandardMaterial3D_k4blj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="boat/hull" unique_id=1551277549]
-transform = Transform3D(0.040581893, 2.3436658e-10, 2.9997256, -0.078833595, 2.9989634, 0.0010665023, -2.99869, -0.07884076, 0.04056788, -0.140973, -0.83706117, 1.7440416)
+transform = Transform3D(0.040581886, 1.6036526e-10, 2.9997256, -0.18607725, 2.9942222, 0.0025173519, -2.993949, -0.1860942, 0.040503744, -0.140973, -0.7133871, 1.7335546)
 shape = SubResource("BoxShape3D_k4blj")
 
 [node name="fish trap front" type="StaticBody3D" parent="boat" unique_id=215045078]
@@ -128,7 +147,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00018310547, 0.58709145, 0
 shape = SubResource("BoxShape3D_i500l")
 
 [node name="Player" parent="." unique_id=315485693 instance=ExtResource("1_ehbqr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6791234, 2.3429754, 3.4233687)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09591514, 2.3429754, 3.4233687)
 
 [node name="Node3D" parent="." unique_id=332840305 instance=ExtResource("2_e1yfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2247896, 0, 3.0036387)
@@ -231,6 +250,15 @@ script = ExtResource("9_2h2d7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bottle detect" unique_id=743456753]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1556549, 0, -0.5229645)
 shape = SubResource("BoxShape3D_mvj37")
+
+[node name="RigidBody3D" parent="." unique_id=1723993489 instance=ExtResource("10_ik3uj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6464171, 4.389017, 2.9212842)
+
+[node name="text bus" type="Node" parent="." unique_id=755879925]
+script = ExtResource("11_7m0t7")
+
+[node name="events" type="Node" parent="." unique_id=1350310704]
+script = ExtResource("12_7m0t7")
 
 [connection signal="body_entered" from="bottle detect" to="bottle detect" method="_on_body_entered"]
 
