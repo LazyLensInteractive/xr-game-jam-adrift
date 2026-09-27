@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://b6tb3povp0nyy" path="res://general items/player/player.tscn" id="1_tapcy"]
 [ext_resource type="Shader" uid="uid://t42s0irtyjpg" path="res://general items/ocean/ocean.gdshader" id="2_xv0ly"]
 [ext_resource type="PackedScene" uid="uid://dqppkbtnrvdd0" path="res://day 1 (tutorial)/island.tscn" id="3_oxhc2"]
-[ext_resource type="PackedScene" uid="uid://dchqr68hfotpr" path="res://general items/book/book.tscn" id="4_tapcy"]
+[ext_resource type="Script" uid="uid://c06p118i6v5sc" path="res://note2.gd" id="5_oxhc2"]
 [ext_resource type="PackedScene" uid="uid://b0sj4f4e5wydp" path="res://general items/book/box.tscn" id="5_xv0ly"]
+[ext_resource type="PackedScene" uid="uid://swly1e18v20w" path="res://credits.tscn" id="6_oxhc2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ntf0k"]
 render_priority = 0
@@ -75,30 +76,55 @@ metallic = 0.56
 roughness = 0.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_oxhc2"]
+size = Vector3(3.034668, 0.123046875, 2.0174408)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_15evg"]
 size = Vector3(3.034668, 0.123046875, 2.0346375)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tapcy"]
-size = Vector3(9.97113, 1, 5.6748047)
+size = Vector3(9.97113, 1, 14.93396)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ces83"]
 albedo_color = Color(0.27663475, 0.17249861, 0.043892235, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_xv0ly"]
 material = SubResource("StandardMaterial3D_ces83")
-size = Vector3(9.97113, 1, 5.6748047)
+size = Vector3(9.97113, 1, 25.997711)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ntf0k"]
+size = Vector3(3.6160889, 1, 8.42627)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_coo46"]
+size = Vector3(3.6160889, 1, 8.42627)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7sh0"]
+size = Vector3(3.7106934, 0.8631592, 2.465332)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_buwng"]
+size = Vector3(3.7106934, 0.8631592, 2.465332)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_doocs"]
+size = Vector2(0.19, 0.26)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wn01w"]
+size = Vector3(0.19, 0.024042968, 0.26)
 
 [node name="basement" type="Node3D" unique_id=2143175814]
+
+[node name="credits" parent="." unique_id=1130671244 instance=ExtResource("6_oxhc2")]
+transform = Transform3D(-0.99989164, -7.450581e-09, 0.014736593, 2.2351742e-08, 1.0000008, 1.8626451e-09, -0.014736593, 1.8626451e-09, -0.99989134, 1.0009836, 3.8763182, 20.153996)
 
 [node name="Player" parent="." unique_id=315485693 instance=ExtResource("1_tapcy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36707288, 0, 0.0058248043)
 
 [node name="table" type="Node3D" parent="." unique_id=1736036487]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6491617, -0.5091543)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.96764874, -0.5091543)
 
 [node name="Node3D" type="Node3D" parent="table" unique_id=332840305]
 transform = Transform3D(-4.782983e-05, 0, -0.009999542, 0, 0.01, 0, 0.004999771, 0, -9.565966e-05, -0.0034862757, 0, -3.9787388)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="table/Node3D" unique_id=1070367006]
+transform = Transform3D(1, -2.789132e-06, 0, 2.7891324e-06, 1, 0.00014577748, 0, -0.00014577746, 1, 0, -0.34454346, 0)
 mesh = SubResource("PlaneMesh_coo46")
 
 [node name="island" parent="table" unique_id=1647300440 instance=ExtResource("3_oxhc2")]
@@ -109,32 +135,28 @@ transform = Transform3D(0.124961324, 0, 0.03584224, 0, 0.13, 0, -0.03584224, 0, 
 mesh = SubResource("ArrayMesh_oxhc2")
 surface_material_override/0 = SubResource("StandardMaterial3D_15evg")
 
-[node name="book" parent="table" unique_id=870901314 instance=ExtResource("4_tapcy")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.9556861, -0.011953294, -3.5450876)
-
 [node name="box" parent="table" unique_id=1868008020 instance=ExtResource("5_xv0ly")]
 transform = Transform3D(-0.21468249, 0, 0.46261373, 0, 0.51000005, 0, -0.46261373, 0, -0.21468249, -2.1241176, -0.17499799, -3.6343129)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="table" unique_id=650673212]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024658203, -0.0693686, -4.233018)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024658203, -0.0693686, -4.2416162)
 mesh = SubResource("BoxMesh_oxhc2")
 
 [node name="Node" type="Node" parent="." unique_id=1432644014]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node" unique_id=252575424]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Node/StaticBody3D" unique_id=1374087232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024658203, 0.90668476, -4.7421722)
+shape = SubResource("BoxShape3D_15evg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node/StaticBody3D" unique_id=782077303]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10220337, -0.512557, -2.3374023)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10220337, -0.512557, 2.2921753)
 shape = SubResource("BoxShape3D_tapcy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node/StaticBody3D/CollisionShape3D" unique_id=1595729769]
-mesh = SubResource("BoxMesh_xv0ly")
-
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="Node/StaticBody3D" unique_id=426969191]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10220337, 4.191729, -2.3374023)
-shape = SubResource("BoxShape3D_tapcy")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node/StaticBody3D/CollisionShape3D5" unique_id=1469344283]
 mesh = SubResource("BoxMesh_xv0ly")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Node/StaticBody3D" unique_id=578002141]
@@ -144,11 +166,20 @@ shape = SubResource("BoxShape3D_tapcy")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node/StaticBody3D/CollisionShape3D2" unique_id=20662186]
 mesh = SubResource("BoxMesh_xv0ly")
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node/StaticBody3D/CollisionShape3D2" unique_id=1469344283]
+transform = Transform3D(1, 0, 0, 0, -0.03187383, -0.99949193, 0, 0.99949193, -0.03187383, 0.01961565, -3.5879061, 5.266592)
+mesh = SubResource("BoxMesh_xv0ly")
+
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Node/StaticBody3D" unique_id=1413881479]
 transform = Transform3D(0.024796944, -0.99921536, 0.030880809, 0.99968517, 0.024903331, 0.0030651875, -0.0038318175, 0.030795064, 0.9995184, -5.239991, 1.3064973, -2.940969)
 shape = SubResource("BoxShape3D_tapcy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node/StaticBody3D/CollisionShape3D3" unique_id=398489945]
+transform = Transform3D(1.0000309, -1.422377e-07, 0, 9.1828406e-07, 1.000038, 0, 1.1315569e-07, -6.761402e-07, 1, 1.1920929e-07, 2.861023e-06, 9.382843)
+mesh = SubResource("BoxMesh_xv0ly")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node/StaticBody3D/CollisionShape3D3" unique_id=1793211277]
+transform = Transform3D(0.9993723, 0.029104874, -0.021671586, 0.022980802, -0.04540443, 0.99870515, 0.028082194, -0.99858296, -0.046040945, 0.08504307, -3.8456578, 12.891186)
 mesh = SubResource("BoxMesh_xv0ly")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Node/StaticBody3D" unique_id=255991364]
@@ -156,6 +187,7 @@ transform = Transform3D(0.024796944, -0.99921536, 0.030880809, 0.99968517, 0.024
 shape = SubResource("BoxShape3D_tapcy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node/StaticBody3D/CollisionShape3D4" unique_id=979351311]
+transform = Transform3D(1.0000099, 4.0163286e-09, 0, 1.7392449e-07, 1.0000099, 0, 1.7462298e-08, -5.7742e-08, 1, 0, 9.536743e-07, 0.7786101)
 mesh = SubResource("BoxMesh_xv0ly")
 
 [node name="DirectionalLight3D" type="OmniLight3D" parent="." unique_id=1721012137]
@@ -166,3 +198,52 @@ light_indirect_energy = 0.0
 light_volumetric_fog_energy = 4.975
 light_specular = 23.65
 shadow_normal_bias = 7.228
+
+[node name="stairs" type="StaticBody3D" parent="." unique_id=756274305]
+collision_layer = 2
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stairs" unique_id=1602064292]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0.18910933, 1.2327404, 4.2589197)
+mesh = SubResource("BoxMesh_ntf0k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stairs" unique_id=2064819600]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0.18910933, 1.2327404, 4.2589197)
+shape = SubResource("BoxShape3D_coo46")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="stairs" unique_id=690291173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1451416, 3.321302, 8.890695)
+mesh = SubResource("BoxMesh_q7sh0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="stairs" unique_id=974152839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1451416, 3.321302, 8.890695)
+shape = SubResource("BoxShape3D_buwng")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1723993489]
+transform = Transform3D(0.8172731, 0.06029385, -0.5730878, -0.04936634, 0.9981807, 0.03461664, 0.5741323, 0, 0.81876266, -1.2739779, 1.0691442, -4.165752)
+collision_layer = 3
+collision_mask = 3
+mass = 0.02
+linear_damp = 2.0
+angular_damp = 3.0
+script = ExtResource("5_oxhc2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=251419172]
+mesh = SubResource("PlaneMesh_doocs")
+
+[node name="Label3D" type="Label3D" parent="RigidBody3D" unique_id=1338886032]
+transform = Transform3D(0.003137576, -1.1777447, -4.371117e-08, 0, -5.1481113e-08, 1, -0.99943703, -0.003697345, -1.3722437e-10, 0, 0.001, 0)
+pixel_size = 0.0003
+text = "The sea went still this morning. 
+ㅤ
+Sun warm on my face for the first time in months. 
+ㅤ
+I'm not afraid anymore.
+ㅤ
+Wherever you find this, every word of it was yours. 
+I love you, son. 
+Now sail home. And Take care of yourself alright?"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1059556501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0070214844, 0)
+shape = SubResource("BoxShape3D_wn01w")

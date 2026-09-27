@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgu5u8lkem3qp"
 path.s3tc="res://.godot/imported/cheiridopsis_succulent_diff_1k.jpg-bf8c04af4c585e932b9b1ae17e37c32c.s3tc.ctex"
+path.etc2="res://.godot/imported/cheiridopsis_succulent_diff_1k.jpg-bf8c04af4c585e932b9b1ae17e37c32c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://general items/poly haven models/cheiridopsis_succulent_1k.gltf/textures/cheiridopsis_succulent_diff_1k.jpg"
-dest_files=["res://.godot/imported/cheiridopsis_succulent_diff_1k.jpg-bf8c04af4c585e932b9b1ae17e37c32c.s3tc.ctex"]
+dest_files=["res://.godot/imported/cheiridopsis_succulent_diff_1k.jpg-bf8c04af4c585e932b9b1ae17e37c32c.s3tc.ctex", "res://.godot/imported/cheiridopsis_succulent_diff_1k.jpg-bf8c04af4c585e932b9b1ae17e37c32c.etc2.ctex"]
 
 [params]
 

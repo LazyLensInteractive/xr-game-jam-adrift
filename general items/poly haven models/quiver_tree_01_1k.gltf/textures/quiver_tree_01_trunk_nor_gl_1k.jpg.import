@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjeu1qlbwqgq4"
 path.s3tc="res://.godot/imported/quiver_tree_01_trunk_nor_gl_1k.jpg-c0b6c9bf943c94f029310653b0d6c5b5.s3tc.ctex"
+path.etc2="res://.godot/imported/quiver_tree_01_trunk_nor_gl_1k.jpg-c0b6c9bf943c94f029310653b0d6c5b5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://general items/poly haven models/quiver_tree_01_1k.gltf/textures/quiver_tree_01_trunk_nor_gl_1k.jpg"
-dest_files=["res://.godot/imported/quiver_tree_01_trunk_nor_gl_1k.jpg-c0b6c9bf943c94f029310653b0d6c5b5.s3tc.ctex"]
+dest_files=["res://.godot/imported/quiver_tree_01_trunk_nor_gl_1k.jpg-c0b6c9bf943c94f029310653b0d6c5b5.s3tc.ctex", "res://.godot/imported/quiver_tree_01_trunk_nor_gl_1k.jpg-c0b6c9bf943c94f029310653b0d6c5b5.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3bq0p58ks12b"
 path.s3tc="res://.godot/imported/quiver_tree_01_leaf_arm_1k.jpg-a4a2103084fa2a49a0b8fe474c14e85b.s3tc.ctex"
+path.etc2="res://.godot/imported/quiver_tree_01_leaf_arm_1k.jpg-a4a2103084fa2a49a0b8fe474c14e85b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://general items/poly haven models/quiver_tree_01_1k.gltf/textures/quiver_tree_01_leaf_arm_1k.jpg"
-dest_files=["res://.godot/imported/quiver_tree_01_leaf_arm_1k.jpg-a4a2103084fa2a49a0b8fe474c14e85b.s3tc.ctex"]
+dest_files=["res://.godot/imported/quiver_tree_01_leaf_arm_1k.jpg-a4a2103084fa2a49a0b8fe474c14e85b.s3tc.ctex", "res://.godot/imported/quiver_tree_01_leaf_arm_1k.jpg-a4a2103084fa2a49a0b8fe474c14e85b.etc2.ctex"]
 
 [params]
 

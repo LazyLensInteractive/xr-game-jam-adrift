@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://swly1e18v20w"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t5rx0"]
+size = Vector3(10.603821, 1, 17.208374)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nm7lk"]
+size = Vector3(10.603821, 1, 17.208374)
+
+[node name="credits" type="Node3D" unique_id=1130671244]
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1640328660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3172395, 0)
+text = "Day 16k:
+ㅤ
+ㅤ
+Made by: LazyLens (sleepy eli)
+ㅤ
+ㅤ
+Thanks for playing!
+Hope you enjoyed it was far shorter than I wanted 
+but life took over 80% of my jam timehappy i got something out at least.
+Can't wait to play all tha games the rest yall made!
+ㅤ
+If you want plenty of unused stuff in the source code to look through. 
+Always down to learn as only been doing this for 7 months ish "
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1614631675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5588989, -0.57871413, 2.9471436)
+mesh = SubResource("BoxMesh_t5rx0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=269794094]
+transform = Transform3D(0.08547719, -0.99634016, 0, 0.99634016, 0.08547719, 0, 0, 0, 1, -4.077537, -0.57871413, 2.9471436)
+mesh = SubResource("BoxMesh_t5rx0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=148242869]
+transform = Transform3D(0.08547719, -0.99634016, 0, 0.99634016, 0.08547719, 0, 0, 0, 1, 5.0634065, -0.57871413, 2.9471436)
+mesh = SubResource("BoxMesh_t5rx0")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1284574482]
+transform = Transform3D(-0.0024594618, 0.028668005, -0.9995859, 0.9963401, 0.08547718, 0, 0.0854418, -0.99592763, -0.028773313, -0.09360053, 0.27152568, -6.246577)
+mesh = SubResource("BoxMesh_t5rx0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=77346986]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=918004476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5588989, -0.57871413, 2.9471436)
+shape = SubResource("BoxShape3D_nm7lk")

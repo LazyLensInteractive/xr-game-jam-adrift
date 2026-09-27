@@ -15,5 +15,7 @@ func _process(delta: float) -> void:
 		cup_to_do.hide()
 	if Data.bottle_thrown == true:
 		bottle_to_do.hide()
+	if Data.bottle_thrown == false:
+		bottle_to_do.show()
 	if Data.fished == true:
 		fish_to_do.hide()

@@ -1,25 +1,36 @@
 [gd_scene format=3 uid="uid://byw4kc6nwfkog"]
 
 [ext_resource type="Script" uid="uid://dr7sblui7sadq" path="res://general items/labels/board.gd" id="1_k3xuh"]
-[ext_resource type="PackedScene" uid="uid://dlxg0tqojjuv1" path="res://general items/labels/bottle to do.tscn" id="2_s0idb"]
 [ext_resource type="PackedScene" uid="uid://cyx8shf1ny0db" path="res://general items/labels/fish to do.tscn" id="3_iq7fe"]
 [ext_resource type="PackedScene" uid="uid://f63jlrnmv612" path="res://general items/labels/water cup to do.tscn" id="4_2fvwk"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_88isd"]
-size = Vector3(2.6778717, 0.03753662, 1.2011414)
+size = Vector3(2.6778717, 0.03753662, 0.7955303)
 
 [node name="board" type="Node3D" unique_id=1307075278]
 script = ExtResource("1_k3xuh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1830801584]
-transform = Transform3D(1, 0, 0, 0, -0.0040009352, -0.999992, 0, 0.999992, -0.0040009352, -0.021568298, 0.8131644, 0.1256117)
+transform = Transform3D(1, 0, 0, 0, -0.0040009352, -0.999992, 0, 0.999992, -0.0040009352, -0.021568298, 0.6076636, 0.1247895)
 mesh = SubResource("BoxMesh_88isd")
 
-[node name="BottleToDo" parent="." unique_id=2126852142 instance=ExtResource("2_s0idb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02428025, 0.8078425, 0.15135574)
+[node name="BottleToDo" type="Node3D" parent="." unique_id=2126852142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02428025, 0.7540282, 0.15135574)
+
+[node name="Label3D" type="Label3D" parent="BottleToDo" unique_id=1526899364]
+text = "Throw bottle into the sea!
+(in barrel)"
 
 [node name="FishToDo" parent="." unique_id=666538497 instance=ExtResource("3_iq7fe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02428025, 1.2094798, 0.15135574)
+visible = false
 
 [node name="CupToDo" parent="." unique_id=1980432191 instance=ExtResource("4_2fvwk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02428025, 0.43745488, 0.15135574)
+visible = false
+
+[node name="CupToDo2" type="Node3D" parent="." unique_id=809534348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02428025, 0.3632843, 0.15135574)
+
+[node name="Label3D" type="Label3D" parent="CupToDo2" unique_id=19933668]
+text = "Go to bed"

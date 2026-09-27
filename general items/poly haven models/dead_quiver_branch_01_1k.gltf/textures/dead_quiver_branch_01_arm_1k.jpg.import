@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://xsh1oebmf45h"
 path.s3tc="res://.godot/imported/dead_quiver_branch_01_arm_1k.jpg-971d0831515d0aa3f8c47d4edbd96efa.s3tc.ctex"
+path.etc2="res://.godot/imported/dead_quiver_branch_01_arm_1k.jpg-971d0831515d0aa3f8c47d4edbd96efa.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://general items/poly haven models/dead_quiver_branch_01_1k.gltf/textures/dead_quiver_branch_01_arm_1k.jpg"
-dest_files=["res://.godot/imported/dead_quiver_branch_01_arm_1k.jpg-971d0831515d0aa3f8c47d4edbd96efa.s3tc.ctex"]
+dest_files=["res://.godot/imported/dead_quiver_branch_01_arm_1k.jpg-971d0831515d0aa3f8c47d4edbd96efa.s3tc.ctex", "res://.godot/imported/dead_quiver_branch_01_arm_1k.jpg-971d0831515d0aa3f8c47d4edbd96efa.etc2.ctex"]
 
 [params]
 

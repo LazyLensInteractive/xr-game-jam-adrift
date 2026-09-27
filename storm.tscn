@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://tbbyn0o33rsb"]
+
+[ext_resource type="Script" uid="uid://c4qqdsn3solrc" path="res://storm.gd" id="1_tgh1n"]
+
+[node name="storm" type="Node3D" unique_id=370990679]
+script = ExtResource("1_tgh1n")

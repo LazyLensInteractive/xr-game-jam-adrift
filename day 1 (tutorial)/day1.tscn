@@ -9,9 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://q0i4b7111mrc" path="res://general items/testing items/test.tscn" id="8_mvj37"]
 [ext_resource type="Script" uid="uid://dw8vsb4mj1wub" path="res://day 1 (tutorial)/bottle_detect.gd" id="9_2h2d7"]
 [ext_resource type="PackedScene" uid="uid://cm0vbs2hu6lg0" path="res://general items/poly haven models/wooden_barrels_01_1k.gltf/wooden_barrels_01_1k.gltf" id="9_k4blj"]
-[ext_resource type="PackedScene" uid="uid://bq4bebxq2yfqc" path="res://note.tscn" id="10_ik3uj"]
 [ext_resource type="Script" uid="uid://nbxtt6inf7uu" path="res://day 1 (tutorial)/text_bus.gd" id="11_7m0t7"]
 [ext_resource type="Script" uid="uid://c5vtxnp43kjog" path="res://day 1 (tutorial)/events.gd" id="12_7m0t7"]
+[ext_resource type="Script" uid="uid://txh3ha5i0txf" path="res://day 1 (tutorial)/ahhhhhhh.gd" id="13_0wwh8"]
+[ext_resource type="Script" uid="uid://c06p118i6v5sc" path="res://note2.gd" id="13_k1j2q"]
+[ext_resource type="PackedScene" uid="uid://tbbyn0o33rsb" path="res://storm.tscn" id="14_0wwh8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ehbqr"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -92,15 +94,30 @@ size = Vector3(1.6705322, 0.56347656, 0.76416016)
 [sub_resource type="BoxShape3D" id="BoxShape3D_mvj37"]
 size = Vector3(60.035736, 1, 60.843414)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_doocs"]
+size = Vector2(0.19, 0.26)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_doocs"]
+size = Vector3(0.19, 0.059, 0.26)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gugt3"]
+size = Vector3(2.125, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k1j2q"]
+size = Vector3(2.069292, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2x7dt"]
+size = Vector3(0.29541016, 0.20788574, 1)
+
 [node name="Day1" type="Node3D" unique_id=2117810886]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1932374263]
 environment = SubResource("Environment_i500l")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1498041592]
-transform = Transform3D(-0.34322965, 0.83298, -0.43397924, -0.68895584, 0.090762295, 0.7190983, 0.6383826, 0.5458084, 0.54273474, 0, 0, 0)
+transform = Transform3D(-0.60102093, 0.4829831, -0.6367898, -0.6889561, 0.09076224, 0.71909773, 0.4051087, 0.870913, 0.2782039, 0, 0, 0)
 light_color = Color(0.47005028, 0.23575458, 0, 1)
-light_energy = 3.27
+light_energy = 2.544
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 4.975
 light_specular = 23.65
@@ -157,6 +174,7 @@ transform = Transform3D(0.13442524, -0.2057627, 0.7674036, -0.0021126345, 0.3880
 
 [node name="island" parent="." unique_id=1647300440 instance=ExtResource("6_vloq4")]
 transform = Transform3D(0.052954797, 0, -0.71805006, 0, 0.72, 0, 0.71805006, 0, 0.052954797, -2.3458138, 0, -10.760289)
+visible = false
 
 [node name="AreaGrab" type="Area3D" parent="." unique_id=1327313071]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6208145, 1.2882558, 2.880836)
@@ -251,14 +269,90 @@ script = ExtResource("9_2h2d7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1556549, 0, -0.5229645)
 shape = SubResource("BoxShape3D_mvj37")
 
-[node name="RigidBody3D" parent="." unique_id=1723993489 instance=ExtResource("10_ik3uj")]
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1723993489]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6464171, 4.389017, 2.9212842)
+collision_layer = 3
+collision_mask = 3
+mass = 0.02
+linear_damp = 2.0
+angular_damp = 3.0
+script = ExtResource("13_k1j2q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=251419172]
+mesh = SubResource("PlaneMesh_doocs")
+
+[node name="Label3D" type="Label3D" parent="RigidBody3D" unique_id=1338886032]
+transform = Transform3D(0.003137576, -1.1777447, -4.371117e-08, 0, -5.1481113e-08, 1, -0.99943703, -0.003697345, -1.3722437e-10, 0, 0.001, 0)
+pixel_size = 0.0003
+text = "Day 16,436. 
+Lost my way out here and never noticed when.
+barely holding on this sickness is taking me away.
+ㅤ
+All I have left are these notes,
+and my list of tasks for the day., Im tired.
+
+ㅤ
+ Forty-five years adrift, and I never once learned to say... 
+the only  thing that mattered. 
+ㅤI built you a whole ocean instead. I'm sorry my son."
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1059556501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026176898, 0)
+shape = SubResource("BoxShape3D_doocs")
 
 [node name="text bus" type="Node" parent="." unique_id=755879925]
 script = ExtResource("11_7m0t7")
 
 [node name="events" type="Node" parent="." unique_id=1350310704]
 script = ExtResource("12_7m0t7")
+
+[node name="stormnote" type="RigidBody3D" parent="." unique_id=1158259960]
+transform = Transform3D(1, 0, 0, 0, 0.99486715, -0.101190425, 0, 0.101190425, 0.99486715, -1.5600722, 1.776692, 3.998519)
+visible = false
+collision_layer = 3
+collision_mask = 3
+mass = 0.02
+linear_damp = 2.0
+angular_damp = 3.0
+script = ExtResource("13_k1j2q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stormnote" unique_id=884690966]
+mesh = SubResource("PlaneMesh_doocs")
+
+[node name="Label3D" type="Label3D" parent="stormnote" unique_id=467385416]
+transform = Transform3D(0.003137576, -1.1777447, -4.371117e-08, 0, -5.1481113e-08, 1, -0.99943703, -0.003697345, -1.3722437e-10, 0, 0.001, 0)
+pixel_size = 0.0003
+text = "The clouds came in fast, like they knew. 
+Waves taller than any house. I can feel it. 
+ㅤ
+I held the boat steady all night, 
+
+just to hold on a bit longer just in case
+ I'm able to see him one last time."
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stormnote" unique_id=2021091869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026176898, 0)
+shape = SubResource("BoxShape3D_doocs")
+
+[node name="bed" type="MeshInstance3D" parent="." unique_id=428638301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07421875, 1.0792959, 5.102964)
+mesh = SubResource("BoxMesh_gugt3")
+
+[node name="Area3D" type="Area3D" parent="bed" unique_id=1176469691]
+script = ExtResource("13_0wwh8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bed/Area3D" unique_id=500658982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03269294, 0.4692284, 0)
+shape = SubResource("BoxShape3D_k1j2q")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1895065102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9890137, 1.5437522, 5.102964)
+mesh = SubResource("BoxMesh_2x7dt")
+
+[node name="storm" parent="." unique_id=370990679 instance=ExtResource("14_0wwh8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3848648, 8.721233, 3.965814)
+visible = false
+rain_intensity = 5.0
 
 [connection signal="body_entered" from="bottle detect" to="bottle detect" method="_on_body_entered"]
 

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cryw6odclda2j" path="res://general items/poly haven models/cheiridopsis_succulent_1k.gltf/cheiridopsis_succulent_1k.gltf" id="3_ces83"]
 [ext_resource type="Script" uid="uid://bqevj83o0n04m" path="res://day 1 (tutorial)/area_3d.gd" id="4_ces83"]
 [ext_resource type="PackedScene" uid="uid://cg035dvefbxhs" path="res://general items/poly haven models/dead_quiver_branch_01_1k.gltf/dead_quiver_branch_01_1k.gltf" id="4_j4uil"]
-[ext_resource type="PackedScene" uid="uid://dchqr68hfotpr" path="res://general items/book/book.tscn" id="6_g3uqp"]
+[ext_resource type="Script" uid="uid://c06p118i6v5sc" path="res://note2.gd" id="6_g3uqp"]
 
 [sub_resource type="Gradient" id="Gradient_bqvmh"]
 offsets = PackedFloat32Array(0.24637681, 0.884058)
@@ -40,6 +40,12 @@ size = Vector3(0.49993896, 1.0157623, 1.8676758)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ces83"]
 size = Vector3(2.5452576, 1.6202393, 4.194092)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_doocs"]
+size = Vector2(0.19, 0.26)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_doocs"]
+size = Vector3(0.19, 0.059, 0.26)
+
 [node name="island" type="Node3D" unique_id=1647300440]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1862942744]
@@ -54,6 +60,10 @@ shape = SubResource("ConcavePolygonShape3D_j4uil")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=614160529]
 transform = Transform3D(0.9938924, 0, 0.110353656, 0, 1, 0, -0.110353656, 0, 0.9938924, 4.0299215, 1.5527372, -0.43297476)
+shape = SubResource("BoxShape3D_g3uqp")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=1179429603]
+transform = Transform3D(0.9938924, 0, 0.110353656, 0, 1, 0, -0.110353656, 0, 0.9938924, 3.7121794, 1.6804214, -0.43297476)
 shape = SubResource("BoxShape3D_g3uqp")
 
 [node name="quiver_tree_01_1k" parent="." unique_id=352619338 instance=ExtResource("1_spqag")]
@@ -104,8 +114,35 @@ transform = Transform3D(0.77685934, -2.0101025, 0, 0.9375456, 0.36234027, -1.906
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=691597616]
 
-[node name="book" parent="." unique_id=870901314 instance=ExtResource("6_g3uqp")]
-transform = Transform3D(-0.032605086, -0.019531175, 0.9992774, 0.038112648, 0.99905765, 0.02077043, -0.9987414, 0.03876232, -0.03182997, 4.0187283, 1.9335132, -0.34407452)
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1723993489]
+transform = Transform3D(0.93677264, 0.34993857, 0, -0.34993857, 0.93677264, 0, 0, 0, 1, 4.0931525, 2.1851726, -0.45524293)
+collision_layer = 3
+collision_mask = 3
+mass = 0.02
+linear_damp = 2.0
+angular_damp = 3.0
+script = ExtResource("6_g3uqp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=251419172]
+mesh = SubResource("PlaneMesh_doocs")
+
+[node name="Label3D" type="Label3D" parent="RigidBody3D" unique_id=1338886032]
+transform = Transform3D(0.003137576, -1.1777447, -4.371117e-08, 0, -5.1481113e-08, 1, -0.99943703, -0.003697345, -1.3722437e-10, 0, 0.001, 0)
+pixel_size = 0.0003
+text = "I woke before dawn and there it was, 
+ㅤ
+sand rising out of all that grey.
+ㅤ
+Land. After so much water, 
+I laughed like a boy again.
+ㅤ
+You would have loved it here, kid. 
+ㅤ
+I Find myself looking for you on the shore anyway."
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1059556501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026176898, 0)
+shape = SubResource("BoxShape3D_doocs")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 

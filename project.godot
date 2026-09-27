@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Data="*uid://rqu7pmwyu6bs"
+Events="*uid://c5vtxnp43kjog"
 
 [display]
 
@@ -48,6 +49,7 @@ joypads/ignore_joypad_on_unfocused_application=true
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
 lights_and_shadows/multi_bounce_occlusion/enabled=true
 
 [xr]
